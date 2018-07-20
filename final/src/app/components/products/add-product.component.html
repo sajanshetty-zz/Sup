@@ -1,0 +1,61 @@
+<h2>
+	{{
+		_editFlag? 'Edit' : 'Add'
+	}} Product
+	{{
+		_editFlag? ' - ' + productForm?.name?.value : ''
+	}}
+</h2>
+
+<form [formGroup]="_productForm" (submit)="onSubmit()">
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name">
+		<div *ngIf="_submitted && productForm.name.errors" class="alert alert-danger mt-1">
+			<div *ngIf="_submitted && productForm.name.errors.required">
+				Name is required.
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="price">Price</label>
+		<input type="number" class="form-control" id="price" placeholder="Enter price" formControlName="price">
+		<div *ngIf="_submitted && productForm.price.errors" class="alert alert-danger mt-1">
+			<div *ngIf="_submitted && productForm.price.errors.required">
+				Price is required.
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="size">Size</label>
+		<select class="form-control" formControlName="size">
+			<option value="XS">Extra Small</option>
+			<option value="S">Small</option>
+			<option value="M">Medium</option>
+			<option value="L">Large</option>
+			<option value="XL">Extra Large</option>
+		</select>
+		<div *ngIf="_submitted && productForm.size.errors" class="alert alert-danger mt-1">
+			<div *ngIf="_submitted && productForm.size.errors.required">
+				Size is required.
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="color">Color</label>
+		<select class="form-control" formControlName="color">
+			<option value="Red">Red</option>
+			<option value="Yellow">Yellow</option>
+			<option value="Blue">Blue</option>
+			<option value="Green">Green</option>
+			<option value="Black">Black</option>
+		</select>
+		<div *ngIf="_submitted && productForm.color.errors" class="alert alert-danger mt-1">
+			<div *ngIf="_submitted && productForm.color.errors.required">
+					Color is required.
+			</div>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+	<button class="btn btn-default" routerLink="/dashboard/products">Cancel</button>
+</form>

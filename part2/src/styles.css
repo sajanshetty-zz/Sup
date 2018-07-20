@@ -1,0 +1,37 @@
+a:hover{
+	text-decoration: none!important;
+}
+.sidebar-menu {
+    background: #3c3c3c;
+    color: #fff;
+    min-height: 100vh!important;
+    height: 100%;
+}
+.sidebar-menu ul {
+    padding: 0;
+}
+.sidebar-menu li.label-menu {
+    padding: 42px 0px;
+}
+.sidebar-menu ul li {
+    list-style: none;
+}
+.login .card {
+    box-shadow: 1px 2px 14px 2px #ececec;
+    border: 1px solid #dedede;
+    margin-top: 20%;
+}
+.sidebar-menu .menu-item {
+	border-bottom: 1px solid #565656;
+	float: left;
+    width: 100%;
+}
+.sidebar-menu .menu-item a {
+    padding: 12px 0;
+    float: left;
+    width: 100%;
+    color: #fff;
+}
+.sidebar-menu .menu-item a:hover, .sidebar-menu .menu-item a.active{
+	background: #484848
+}
